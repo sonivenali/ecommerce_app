@@ -1,19 +1,17 @@
-import 'dart:convert';
 
-import 'package:flipkartapp/FashionExample/Models.dart';
-import 'package:flipkartapp/Services.dart';
+import 'package:flipkartapp/fashion/model.dart';
+import 'package:flipkartapp/services/service.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 
 
-class FashionModelUI extends StatefulWidget {
+class FashionPage extends StatefulWidget {
   @override
-  _FashionModelUIState createState() => _FashionModelUIState();
+  _FashionPageState createState() => _FashionPageState();
 }
 
-class _FashionModelUIState extends State<FashionModelUI> {
-  List<FashionModel> fashionData = [];
+class _FashionPageState extends State<FashionPage> {
+  List<FashionModel> fashionData1 = [];
 
   @override
   void initState() {
@@ -24,11 +22,11 @@ class _FashionModelUIState extends State<FashionModelUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: fashionData == null
+      body: fashionData1 == null
           ? CircularProgressIndicator()
           : ListView.builder( // generates a list using itemCount and itemBUilder
 
-        itemCount: fashionData.length,
+        itemCount: fashionData1.length,
 
         itemBuilder: (context, int index){
           return Padding(
@@ -38,9 +36,9 @@ class _FashionModelUIState extends State<FashionModelUI> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Text(fashionData[index].title),
-                    Image.network(fashionData[index].image),
-                    Text(fashionData[index].price.toString())
+                    Text(fashionData1[index].title),
+                    Image.network(fashionData1[index].image),
+                    Text(fashionData1[index].price.toString())
                   ],
                 ),
               ),
@@ -55,12 +53,12 @@ class _FashionModelUIState extends State<FashionModelUI> {
 
   getData() async{
     List<FashionModel> fashionDaata;
-    Services services = Services();
+    Service services = Service();
     fashionDaata = await services.getFashionListModel();
     setState(() {
-      fashionData  = fashionDaata;
+      fashionData1  = fashionDaata;
     });
-    print("thsi si dataaaaa ${fashionData[1].title}");
+    print("thsi si dataaaaa ${fashionData1[1].title}");
   }
 
 }

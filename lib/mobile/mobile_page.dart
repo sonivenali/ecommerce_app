@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../Services.dart';
+import '../services/service.dart';
 import 'model.dart';
 
-class MobileUI extends StatefulWidget {
+class MobilePage extends StatefulWidget {
   @override
-  _MobileUIState createState() => _MobileUIState();
+  _MobilePageState createState() => _MobilePageState();
 }
 
-class _MobileUIState extends State<MobileUI> {
-  List<Mobile> Mobile22;    //storedata
+class _MobilePageState extends State<MobilePage> {
+  List<MobileModel> Mobile22;    //storedata
 
   @override
   void initState() {  //get function call hota hai
@@ -46,8 +46,8 @@ class _MobileUIState extends State<MobileUI> {
   }
 
   getMobileData() async {
-    List<Mobile> MobileData;
-    Services services = Services();
+    List<MobileModel> MobileData;
+    Service services = Service();
     MobileData = await services.getMobile();
     setState(() {
       Mobile22 = MobileData;

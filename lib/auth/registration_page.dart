@@ -1,15 +1,13 @@
-import 'package:flipkartapp/Services.dart';
+import 'package:flipkartapp/services/service.dart';
+import 'package:flipkartapp/auth/login_page.dart';
 import 'package:flutter/material.dart';
 
-import '../home.dart';
-import 'loginvenali.dart';
-
-class RegisterVenali extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _RegisterVenaliState createState() => _RegisterVenaliState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterVenaliState extends State<RegisterVenali> {
+class _RegisterPageState extends State<RegisterPage> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController username = TextEditingController();
@@ -57,7 +55,7 @@ class _RegisterVenaliState extends State<RegisterVenali> {
   }
 
   register()async {
-    Services servies = Services();
+    Service servies = Service();
     var map = new Map<String, dynamic>();
     map['username'] = username.value.text;
     map['password'] = password.value.text;
@@ -67,7 +65,7 @@ class _RegisterVenaliState extends State<RegisterVenali> {
     print(abc);
     if (abc["refresh"] != null) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LoginVenali()));
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
     } else {
       _scaffoldKey.currentState
           .showSnackBar(new SnackBar(content: new Text("Invalid credentials")));

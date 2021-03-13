@@ -1,37 +1,36 @@
-import 'package:flipkartapp/postAPI/LoginApi.dart';
+import 'package:flipkartapp/auth/login_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
-import 'Login_venali/registration.dart';
-import 'home.dart';
+import 'home/home_page.dart';
 
 void main() {
-  runApp(flipkart());
+  runApp(Flipkart());
 }
 
-class flipkart extends StatefulWidget {
+class Flipkart extends StatefulWidget {
   @override
-  _flipkartState createState() => _flipkartState();
+  _FlipkartState createState() => _FlipkartState();
 }
 
-class _flipkartState extends State<flipkart> {
+class _FlipkartState extends State<Flipkart> {
   String loginToken;
 
   @override
   void initState() {
-    //sp
-    getLoginToeknValuefromSharedPreference();
+    super.initState();
+    getLoginTokenValueFromSharedPreferences();
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: loginToken != null ? HomeScreen() : Login(),
+      home: loginToken != null ? HomePage() : LoginPage(),
     );
   }
 
-  getLoginToeknValuefromSharedPreference() async {
+  getLoginTokenValueFromSharedPreferences() async {
     //sp
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {

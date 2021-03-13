@@ -1,12 +1,12 @@
-class Mobile {
+class MobileModel {
   String name;
   String image;
   String price;
   String deliveryDate;
 
-  Mobile({this.name, this.image, this.price, this.deliveryDate});
+  MobileModel({this.name, this.image, this.price, this.deliveryDate});
 
-  Mobile.fromJson(Map<String, dynamic> json) {
+  MobileModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     image = json['image'];
     price = json['price'];

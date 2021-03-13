@@ -1,17 +1,16 @@
 import 'dart:convert';
 
-import 'package:flipkartapp/Services.dart';
+import 'package:flipkartapp/services/service.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
-import '../home.dart';
+import '../home/home_page.dart';
 
-class Login extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginPageState extends State<LoginPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   TextEditingController _namecntrlr = TextEditingController();
   TextEditingController _psswrdcntrl = TextEditingController();
@@ -48,7 +47,7 @@ class _LoginState extends State<Login> {
   }
 
   void _login(contextt) async {
-    Services services = Services();
+    Service services = Service();
     print(_namecntrlr.value.text);
     final reqbody = {
       "username": _namecntrlr.value.text,
@@ -59,7 +58,7 @@ class _LoginState extends State<Login> {
     if (data["refresh"] != null) {
       print("inside iffff");
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     } else if (data["error"]["statusCode"] == 401) {
       print("wrongggg");
       _scaffoldKey.currentState

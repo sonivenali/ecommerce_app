@@ -2,26 +2,26 @@ import 'package:carousel_extended/carousel_extended.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flappy_search_bar/scaled_tile.dart';
 import 'package:flappy_search_bar/search_bar_style.dart';
-import 'package:flipkartapp/electronic/Electronic_ui.dart';
-import 'package:flipkartapp/menu.dart';
-import 'package:flipkartapp/mobile/mobile_ui.dart';
+import 'package:flipkartapp/electronic/electronics_page.dart';
+import 'package:flipkartapp/home/menu.dart';
+import 'package:flipkartapp/mobile/mobile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
-import 'fashion/fashion_ui.dart';
+import '../fashion/fashion_page.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomePageState extends State<HomePage> {
   final searchBarController = SearchBarController();
   int _index = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MenuScreen(),
+      drawer: Menu(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         onTap: (newIndex) {
@@ -84,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.white,
             ),
             onPressed: () {
-              MenuScreen();
+              Menu();
             },
           ),
           IconButton(
@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MobileUI()),
+                          builder: (context) => MobilePage()),
                     );
                   },
                     child: buildListButton(
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => FashionModelUI()),
+                            builder: (context) => FashionPage()),
                       );
                     },
                     child: buildListButton(
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ElectronicUi()),
+                            builder: (context) => ElectronicsPage()),
                       );
                     },
                     child: buildListButton(

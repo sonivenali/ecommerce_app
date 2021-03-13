@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MenuScreen extends StatefulWidget {
+class Menu extends StatefulWidget {
   @override
-  _MenuScreenState createState() => _MenuScreenState();
+  _MenuState createState() => _MenuState();
 }
 
-class _MenuScreenState extends State<MenuScreen> {
+class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
