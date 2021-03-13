@@ -17,7 +17,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.white,
       key:_scaffoldKey,
         body: Padding(
       padding: const EdgeInsets.all(16),
@@ -40,15 +40,21 @@ class _RegisterPageState extends State<RegisterPage> {
             decoration: InputDecoration(labelText: "Email"),
             controller: email,
           ),
-          RaisedButton(
-            onPressed: () {
-              register();
-            },
-            child: Text(
-              "Register",
-              style: TextStyle(color: Colors.black),
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: FlatButton( minWidth: 170,
+              height: 50,
+              color: Colors.black,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50)),
+              onPressed: () {
+              },
+              child: Text(
+                "Regsiter",
+                style: TextStyle(color: Colors.white,fontSize: 16),
+              ),
             ),
-          )
+          ),
         ],
       ),
     ));

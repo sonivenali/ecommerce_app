@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flipkartapp/auth/registration_page.dart';
 import 'package:flipkartapp/services/service.dart';
 import 'package:flutter/material.dart';
 
@@ -18,28 +19,65 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       key: _scaffoldKey,
       body: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: "Username",
+            Padding(
+              padding: const EdgeInsets.only(left: 16,right: 16),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "Username",
+                    ),
+                    controller: _namecntrlr,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(labelText: "Password"),
+                    controller: _psswrdcntrl,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: FlatButton( minWidth: 170,
+                      height: 50,
+                      color: Colors.black,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      onPressed: () {
+                        _login(context);
+                      },
+                      child: Text(
+                        "Login",
+                        style: TextStyle(color: Colors.white,fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              controller: _namecntrlr,
             ),
-            TextFormField(
-              decoration: InputDecoration(labelText: "Password"),
-              controller: _psswrdcntrl,
-            ),
-            RaisedButton(
-              onPressed: () {
-                _login(context);
-              },
-              child: Text("Login"),
-            ),
+            Align(
+              alignment: AlignmentDirectional.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 50),
+                child: FlatButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                  },
+                  child: Text(
+                    "Don't have an account? Register here",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                  minWidth: 120,
+                  height: 50,
+
+                ),
+              ),
+            )
           ],
         ),
       ),

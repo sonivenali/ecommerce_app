@@ -1,4 +1,5 @@
 import 'package:flipkartapp/auth/login_page.dart';
+import 'package:flipkartapp/auth/splash_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,7 +27,7 @@ class _FlipkartState extends State<Flipkart> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: loginToken != null ? HomePage() : LoginPage(),
+      home: SplashScreen()
     );
   }
 
