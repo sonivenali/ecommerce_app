@@ -26,7 +26,19 @@ class _LoginPageState extends State<LoginPage> {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 16,right: 16),
+              padding: const EdgeInsets.only(top: 100),
+              child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/appicon.png",
+                    height: 110,
+                    width: 110,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -42,7 +54,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 30),
-                    child: FlatButton( minWidth: 170,
+                    child: FlatButton(
+                      minWidth: 170,
                       height: 50,
                       color: Colors.black,
                       shape: RoundedRectangleBorder(
@@ -52,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       child: Text(
                         "Login",
-                        style: TextStyle(color: Colors.white,fontSize: 16),
+                        style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),
                   ),
@@ -66,7 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: FlatButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterPage()));
                   },
                   child: Text(
                     "Don't have an account? Register here",
@@ -74,7 +89,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   minWidth: 120,
                   height: 50,
-
                 ),
               ),
             )

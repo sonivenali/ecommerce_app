@@ -1,14 +1,12 @@
 import 'package:flipkartapp/auth/login_page.dart';
 import 'package:flutter/material.dart';
 
-
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -18,9 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: Column(mainAxisSize: MainAxisSize.min,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ClipRRect(
               child: Image.asset(
@@ -32,8 +32,11 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30),
-              child: Text("Ecommerce", style: TextStyle(
-                  fontSize: 20, letterSpacing: 4, color: Colors.blueGrey),),
+              child: Text(
+                "Ecommerce",
+                style: TextStyle(
+                    fontSize: 20, letterSpacing: 4, color: Colors.blueGrey),
+              ),
             )
           ],
         ),
@@ -41,14 +44,11 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-
-
-  void redirectToLogin()async{
+  void redirectToLogin() async {
     await Future.delayed(Duration(seconds: 2));
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(
-          builder: (context) => LoginPage()),
+      MaterialPageRoute(builder: (context) => LoginPage()),
     );
   }
 }
