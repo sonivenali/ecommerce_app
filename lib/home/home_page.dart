@@ -68,20 +68,20 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.orange,
         title: Text(
-          "Flipkart",
+          "Ecommerce",
           style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic),
+              fontStyle: FontStyle.normal),
         ),
         actions: <Widget>[
           IconButton(
             color: Colors.white,
             icon: Icon(
               Icons.notifications,
-              color: Colors.white,
+              color: Colors.black,
             ),
             onPressed: () {
               Menu();
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
             color: Colors.white,
             icon: Icon(
               Icons.shopping_cart,
-              color: Colors.white,
+              color: Colors.black,
             ),
             onPressed: () {
               // do something
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               height: 80,
-              color: Colors.blueAccent,
+              color: Colors.orange,
               child: SearchBar<String>(
                 searchBarStyle: SearchBarStyle(
                     backgroundColor: Colors.white,
