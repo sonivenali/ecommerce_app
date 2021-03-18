@@ -22,7 +22,7 @@ class _ElectronicsPageState extends State<ElectronicsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Electronic22 == null
-            ? CircularProgressIndicator()
+            ? Center(child: CircularProgressIndicator())
             : GridView.builder(
                 gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),

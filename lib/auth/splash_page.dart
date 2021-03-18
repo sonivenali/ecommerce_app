@@ -1,5 +1,6 @@
 import 'package:flipkartapp/auth/login_page.dart';
 import 'package:flipkartapp/auth/registration_page.dart';
+import 'package:flipkartapp/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -49,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(Duration(seconds: 2));
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => RegisterPage()),
+      MaterialPageRoute(builder: (context) => HomePage()),
     );
   }
 }

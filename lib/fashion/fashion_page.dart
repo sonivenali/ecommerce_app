@@ -23,7 +23,7 @@ class _FashionPageState extends State<FashionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: fashionData1 == null
-          ? CircularProgressIndicator()
+          ? Center(child: CircularProgressIndicator())
           : ListView.builder( // generates a list using itemCount and itemBUilder
 
         itemCount: fashionData1.length,
